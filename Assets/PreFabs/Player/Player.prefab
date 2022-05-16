@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 19821358047672669}
   - component: {fileID: 6362369009170571174}
   - component: {fileID: 1789469050226319790}
-  - component: {fileID: 8715883186958065883}
   - component: {fileID: 4841558539919923946}
   - component: {fileID: 3864132131688189000}
   - component: {fileID: 599822835632816903}
+  - component: {fileID: 8715883186958065883}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -77,37 +77,6 @@ MonoBehaviour:
   jumpForce: 10
   gravity: 26
   rechargeSpeed: 0.15
---- !u!114 &8715883186958065883
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3390106890059640645}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Actions: {fileID: -944628639613478452, guid: 98931c2f939fabe448ebda6093646ab8,
-    type: 3}
-  m_NotificationBehavior: 0
-  m_UIInputModule: {fileID: 0}
-  m_DeviceLostEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_DeviceRegainedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ControlsChangedEvent:
-    m_PersistentCalls:
-      m_Calls: []
-  m_ActionEvents: []
-  m_NeverAutoSwitchControlSchemes: 0
-  m_DefaultControlScheme: Keyboard&Mouse
-  m_DefaultActionMap: Player
-  m_SplitScreenIndex: -1
-  m_Camera: {fileID: 0}
 --- !u!114 &4841558539919923946
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -155,6 +124,37 @@ MonoBehaviour:
   weaponParent: {fileID: 5255041045633841496}
   weapons: []
   throwable: {fileID: 0}
+--- !u!114 &8715883186958065883
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3390106890059640645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 98931c2f939fabe448ebda6093646ab8,
+    type: 3}
+  m_NotificationBehavior: 0
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents: []
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: Keyboard&Mouse
+  m_DefaultActionMap: Player
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1 &4601300384173136467
 GameObject:
   m_ObjectHideFlags: 0

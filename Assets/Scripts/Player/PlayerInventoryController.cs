@@ -7,7 +7,7 @@ public class PlayerInventoryController : MonoBehaviour
 {
     public GameObject primaryWeaponPos;
     public GameObject weaponParent;
-    public List<Weapon> weapons = new List<Weapon>();
+    public List<Weapon> weapons = new List<Weapon>(); //Maximo 2
     public Throwable throwable = null;
 
     private int _selectedWeaponIndex = -1;

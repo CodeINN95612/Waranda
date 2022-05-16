@@ -54,6 +54,7 @@ public class PlayerController : MonoBehaviour, IInteractor
 
             _controller.Move(moveVec * Time.deltaTime);
         }
+
         //Looking
         {
             Vector2 realLookValue = _input.GetLookValue() * 0.5f * 0.1f; //No se porque, eso esta en google...
