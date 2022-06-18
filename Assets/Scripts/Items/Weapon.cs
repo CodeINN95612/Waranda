@@ -31,5 +31,6 @@ public class Weapon : MonoBehaviour, IInteractableData
     GameObject newObj = Instantiate(proyectil, initialPosition, Quaternion.identity);
     newObj.GetComponent<Rigidbody>().AddForce(Vector3.up * upForce, ForceMode.Impulse);
     newObj.GetComponent<Rigidbody>().AddForce(forward * frontForce, ForceMode.Impulse);
+    Destroy(newObj, 5);
   }
 }
