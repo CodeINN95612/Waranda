@@ -170,6 +170,11 @@ MonoBehaviour:
   damage: 50
   sprite: {fileID: 21300000, guid: 64d9425f1e270884a9f8fbe4fac23aab, type: 3}
   percentage: 0
+  percentageLossPerSecond: 1
+  proyectil: {fileID: 6668221807464877797, guid: f5c6adfa7cad2f94ba4849f507d855b8,
+    type: 3}
+  upForce: 3
+  frontForce: 15
 --- !u!114 &2257489040965537514
 MonoBehaviour:
   m_ObjectHideFlags: 0

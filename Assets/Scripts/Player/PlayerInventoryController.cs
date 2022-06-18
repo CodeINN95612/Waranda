@@ -11,6 +11,7 @@ public class PlayerInventoryController : MonoBehaviour
   public Throwable throwable = null;
 
   public GameObject throwableInitialPos;
+  public GameObject bulletInitialPos;
 
   private int _selectedWeaponIndex = -1;
 
@@ -89,7 +90,7 @@ public class PlayerInventoryController : MonoBehaviour
     return _update;
   }
 
-  public void RechargePrimary(float val)
+  public void RechargePrimary()
   {
     if (_selectedWeaponIndex != primaryIndex)
     {
@@ -97,11 +98,11 @@ public class PlayerInventoryController : MonoBehaviour
     }
 
     Weapon wp = weapons[_selectedWeaponIndex];
-    wp.percentage = MathF.Min(1.0f, wp.percentage + val);
+    wp.Recharge();
     _update = true;
   }
 
-  public void Shoot(float val)
+  public void Shoot()
   {
     if (_selectedWeaponIndex == -1)
     {
@@ -111,7 +112,7 @@ public class PlayerInventoryController : MonoBehaviour
     Weapon wp = weapons[_selectedWeaponIndex];
     if (_selectedWeaponIndex == primaryIndex)
     {
-      wp.percentage = MathF.Max(0.0f, wp.percentage - val);
+      wp.Shoot(bulletInitialPos.transform.position, transform.TransformDirection(Vector3.forward));
       _update = true;
     }
   }

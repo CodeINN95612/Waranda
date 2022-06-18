@@ -19,8 +19,6 @@ public class Throwable : MonoBehaviour, IInteractableData
     GameObject newObj = Instantiate(obj, initialPos, Quaternion.identity);
     newObj.GetComponent<Rigidbody>().AddForce(Vector3.up * upForce, ForceMode.Impulse);
     newObj.GetComponent<Rigidbody>().AddForce(forward * frontForce, ForceMode.Impulse);
-
-    Debug.Log(upForce);
-    Debug.Log(frontForce);
+    Destroy(newObj, 7);
   }
 }
