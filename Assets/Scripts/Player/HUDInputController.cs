@@ -5,11 +5,12 @@ using UnityEngine.UI;
 using TMPro;
 using System;
 
-[RequireComponent(typeof(PlayerInventoryController))]
+[RequireComponent(typeof(PlayerInventoryController), typeof(PlayerMojadoController))]
 public class HUDInputController : MonoBehaviour
 {
   [Header("UIs")]
   public GameObject txtInteraction;
+  public Slider barraModajo;
 
   [Header("Weapon")]
   public GameObject weaponImage;
@@ -21,6 +22,7 @@ public class HUDInputController : MonoBehaviour
   public GameObject throwableImagePre;
 
   private PlayerInventoryController _inventory;
+  private PlayerMojadoController _mojado;
   private Image _img;
 
   void Start()
@@ -31,6 +33,7 @@ public class HUDInputController : MonoBehaviour
     throwablesLayout.SetActive(false);
 
     _inventory = GetComponent<PlayerInventoryController>();
+    _mojado = GetComponent<PlayerMojadoController>();
     _img = weaponImage.GetComponent<Image>();
   }
 
@@ -41,13 +44,23 @@ public class HUDInputController : MonoBehaviour
 
   private void Update()
   {
+    if (_mojado.WasDamaged)
+    {
+      UpdateHealth();
+    }
+
     if (!_inventory.Updated())
     {
       return;
     }
-
     UpdateWeapons();
     UpdateThrowable();
+  }
+
+  private void UpdateHealth()
+  {
+    barraModajo.value = (_mojado.nivelActual / _mojado.maximoNivel);
+    _mojado.WasDamaged = false;
   }
 
   private void UpdateWeapons()

@@ -1363,8 +1363,8 @@ ParticleSystem:
       maxColor: {r: 1, g: 1, b: 1, a: 1}
       maxGradient:
         serializedVersion: 2
-        key0: {r: 0.96222734, g: 1, b: 0.71132076, a: 1}
-        key1: {r: 1, g: 0.89298093, b: 0.2867924, a: 1}
+        key0: {r: 0.7075472, g: 0.3589481, b: 0, a: 1}
+        key1: {r: 0.3962264, g: 0.21811356, b: 0, a: 1}
         key2: {r: 0, g: 0, b: 0, a: 0}
         key3: {r: 0, g: 0, b: 0, a: 0}
         key4: {r: 0, g: 0, b: 0, a: 0}
@@ -4885,7 +4885,7 @@ GameObject:
   - component: {fileID: 2434641569821046183}
   - component: {fileID: 5798177664429061732}
   m_Layer: 0
-  m_Name: Huevo
+  m_Name: Tierra
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4935,7 +4935,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 8a9e98ff01c301140964750f877c22af, type: 2}
+  - {fileID: 2100000, guid: ef170996308569749a2f760c0f88b0a1, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -5001,4 +5001,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   particles: {fileID: 1205687130995524291}
   explotionRadius: 2.5
-  damage: 10
+  damage: 50

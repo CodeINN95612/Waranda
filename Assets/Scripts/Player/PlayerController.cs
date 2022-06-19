@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [RequireComponent(typeof(CharacterController), typeof(PlayerInputController), typeof(HUDInputController))]
-[RequireComponent(typeof(PlayerInventoryController))]
+[RequireComponent(typeof(PlayerInventoryController), typeof(PlayerMojadoController))]
 public class PlayerController : MonoBehaviour, IInteractor
 {
   public GameObject playerCamera;
@@ -18,6 +18,7 @@ public class PlayerController : MonoBehaviour, IInteractor
   private PlayerInputController _input;
   private HUDInputController _hud;
   private PlayerInventoryController _inventory;
+  private PlayerMojadoController _mojado;
 
   private float verticalSpeed = 0f;
   private float xRot = 0.0f;
@@ -28,6 +29,7 @@ public class PlayerController : MonoBehaviour, IInteractor
     _input = GetComponent<PlayerInputController>();
     _hud = GetComponent<HUDInputController>();
     _inventory = GetComponent<PlayerInventoryController>();
+    _mojado = GetComponent<PlayerMojadoController>();
     Cursor.lockState = CursorLockMode.Locked;
     Cursor.visible = false;
   }
@@ -118,11 +120,19 @@ public class PlayerController : MonoBehaviour, IInteractor
       return false;
     }
 
-    if (interactable.GetType() == InteractableType.Throwable)
+    if (interactable.GetType() == InteractableType.Throwable || interactable.GetType() == InteractableType.Dirt)
     {
+      Debug.Log("Agarra");
       _inventory.ChangeThrowable(interactable.GetData<Throwable>());
       return true;
     }
+
+    if (interactable.GetType() == InteractableType.HeatSource)
+    {
+      _mojado.Curar(interactable.GetData<HeatSource>().healValue);
+      return false;
+    }
+
 
     return false;
   }

@@ -6,6 +6,7 @@ using UnityEngine;
 public class Agua : MonoBehaviour
 {
   public ParticleSystem particles;
+  public float damage = 3f;
   private CapsuleCollider _collider;
   private Rigidbody _rb;
   private MeshRenderer _renderer;
@@ -32,5 +33,8 @@ public class Agua : MonoBehaviour
     Destroy(_renderer);
     Destroy(_rb);
     Destroy(this.gameObject, duration);
+
+    var damageable = other.gameObject.GetComponent<IDamageable>();
+    damageable?.Damage(damage);
   }
 }
