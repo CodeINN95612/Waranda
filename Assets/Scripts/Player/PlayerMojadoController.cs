@@ -10,6 +10,7 @@ public class PlayerMojadoController : MonoBehaviour, IDamageable
   public bool WasDamaged = false;
   public void Damage(float value)
   {
+    Debug.Log("Golpeado");
     nivelActual = Mathf.Min(maximoNivel, nivelActual + value);
     WasDamaged = true;
   }
