@@ -504,7 +504,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!23 &334716438
@@ -1044,9 +1044,7 @@ MonoBehaviour:
   count: 5
   sprite: {fileID: 21300000, guid: 03abf16094c1fb845b4810458e06c439, type: 3}
   obj: {fileID: 6668221807464877797, guid: cbc65107d29f88e4fa5a1894f8ca19cb, type: 3}
-  upForce: 5
-<<<<<<< Updated upstream
-  frontForce: 10
+  throwForce: 45
 --- !u!1 &837604391
 GameObject:
   m_ObjectHideFlags: 0
@@ -1148,9 +1146,6 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
-=======
-  frontForce: 30
->>>>>>> Stashed changes
 --- !u!1 &859678012
 GameObject:
   m_ObjectHideFlags: 0
@@ -1712,13 +1707,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1868638680879034502, guid: 17444c917e41e9140ad655095d07f411,
         type: 3}
-<<<<<<< Updated upstream
-      propertyPath: percentageLossPerSecond
-      value: 10
-=======
       propertyPath: shootForce
       value: 20
->>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: 2284601212894945759, guid: 17444c917e41e9140ad655095d07f411,
         type: 3}

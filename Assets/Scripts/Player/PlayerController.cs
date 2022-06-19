@@ -28,6 +28,7 @@ public class PlayerController : MonoBehaviour, IInteractor
     _input = GetComponent<PlayerInputController>();
     _hud = GetComponent<HUDInputController>();
     _inventory = GetComponent<PlayerInventoryController>();
+    Cursor.lockState = CursorLockMode.Locked;
     Cursor.visible = false;
   }
 
