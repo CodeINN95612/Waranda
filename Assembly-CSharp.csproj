@@ -43,20 +43,17 @@
      <Compile Include="Assets\Scripts\Ingredient\Ingredient.cs" />
      <Compile Include="Assets\Scripts\SceneController.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerController.cs" />
+     <Compile Include="Assets\Scripts\Items\Huevo.cs" />
      <Compile Include="Assets\Scripts\Items\Weapon.cs" />
+     <Compile Include="Assets\Scripts\Items\Agua.cs" />
+     <Compile Include="Assets\Scripts\Damage\Damageable.cs" />
      <Compile Include="Assets\Scripts\Interactables\InteractableController.cs" />
+     <Compile Include="Assets\Scripts\Player\Cop.cs" />
      <Compile Include="Assets\Scripts\Items\Throwable.cs" />
      <Compile Include="Assets\Scripts\Player\HUDInputController.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerInventoryController.cs" />
-     <Compile Include="Assets\Scripts\Interactables\InteractableType.cs" />
-<<<<<<< Updated upstream
      <Compile Include="Assets\Scripts\LogicaSeguirCamara.cs" />
-=======
-     <Compile Include="Assets\Scripts\Items\Agua.cs" />
-     <Compile Include="Assets\Scripts\Items\Huevo.cs" />
-     <Compile Include="Assets\Scripts\Damage\Damageable.cs" />
-     <Compile Include="Assets\Scripts\Player\Cop.cs" />
->>>>>>> Stashed changes
+     <Compile Include="Assets\Scripts\Interactables\InteractableType.cs" />
      <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
