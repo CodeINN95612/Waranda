@@ -28,6 +28,7 @@ public class PlayerController : MonoBehaviour, IInteractor
     _input = GetComponent<PlayerInputController>();
     _hud = GetComponent<HUDInputController>();
     _inventory = GetComponent<PlayerInventoryController>();
+    Cursor.visible = false;
   }
 
   void Update()
@@ -60,7 +61,7 @@ public class PlayerController : MonoBehaviour, IInteractor
       Vector2 realLookValue = _input.GetLookValue() * 0.5f * 0.1f; //No se porque, eso esta en google...
 
       xRot -= realLookValue.y * sensitivity;
-      xRot = Mathf.Clamp(xRot, -69f, 69f);
+      xRot = Mathf.Clamp(xRot, -45f, 45f);
 
       transform.Rotate(new Vector3(0f, (realLookValue.x * sensitivity), 0f), Space.Self);
       playerCamera.transform.localRotation = Quaternion.Euler(xRot, 0.0f, 0.0f);

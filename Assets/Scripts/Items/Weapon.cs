@@ -8,15 +8,16 @@ public class Weapon : MonoBehaviour, IInteractableData
   public Sprite sprite;
   public float percentage;
   public float percentageLossPerSecond;
+  public float betweenShotsTime = 0.1f;
   public GameObject proyectil;
-  public float upForce;
-  public float frontForce;
+  public float shootForce;
 
   public void Recharge()
   {
     percentage = Mathf.Min(percentage + percentageLossPerSecond * Time.deltaTime, 100f);
   }
 
+  private float shootTime = 0f;
   public void Shoot(Vector3 initialPosition, Vector3 forward)
   {
     if (percentage <= 0)
@@ -25,12 +26,14 @@ public class Weapon : MonoBehaviour, IInteractableData
       return;
     }
 
+    shootTime += Time.deltaTime;
     percentage -= percentageLossPerSecond * Time.deltaTime;
-
-
-    GameObject newObj = Instantiate(proyectil, initialPosition, Quaternion.identity);
-    newObj.GetComponent<Rigidbody>().AddForce(Vector3.up * upForce, ForceMode.Impulse);
-    newObj.GetComponent<Rigidbody>().AddForce(forward * frontForce, ForceMode.Impulse);
-    Destroy(newObj, 5);
+    if (shootTime > betweenShotsTime)
+    {
+      GameObject newObj = Instantiate(proyectil, initialPosition, Quaternion.identity);
+      newObj.GetComponent<Rigidbody>().AddForce(forward * shootForce, ForceMode.Impulse);
+      Destroy(newObj, 5);
+      shootTime = 0f;
+    }
   }
 }

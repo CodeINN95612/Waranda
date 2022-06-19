@@ -100,7 +100,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 12cf86061c8b40f448d80188e43c846e,
         type: 3}
       propertyPath: m_Name
-      value: WaterGunProp Variant
+      value: WaterGunPropVariant
       objectReference: {fileID: 0}
     - target: {fileID: 1711809055187618644, guid: 12cf86061c8b40f448d80188e43c846e,
         type: 3}
@@ -170,11 +170,11 @@ MonoBehaviour:
   damage: 50
   sprite: {fileID: 21300000, guid: 64d9425f1e270884a9f8fbe4fac23aab, type: 3}
   percentage: 0
-  percentageLossPerSecond: 1
+  percentageLossPerSecond: 15
+  betweenShotsTime: 0.05
   proyectil: {fileID: 6668221807464877797, guid: f5c6adfa7cad2f94ba4849f507d855b8,
     type: 3}
-  upForce: 3
-  frontForce: 15
+  shootForce: 30
 --- !u!114 &2257489040965537514
 MonoBehaviour:
   m_ObjectHideFlags: 0

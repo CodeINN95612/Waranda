@@ -6,8 +6,7 @@ public class Throwable : MonoBehaviour, IInteractableData
   public int count;
   public Sprite sprite;
   public GameObject obj;
-  public float upForce = 2.0f;
-  public float frontForce = 3.0f;
+  public float throwForce = 45.0f;
 
   public void Throw(Vector3 initialPos, Vector3 forward)
   {
@@ -17,8 +16,7 @@ public class Throwable : MonoBehaviour, IInteractableData
     count--;
 
     GameObject newObj = Instantiate(obj, initialPos, Quaternion.identity);
-    newObj.GetComponent<Rigidbody>().AddForce(Vector3.up * upForce, ForceMode.Impulse);
-    newObj.GetComponent<Rigidbody>().AddForce(forward * frontForce, ForceMode.Impulse);
+    newObj.GetComponent<Rigidbody>().AddForce(forward * throwForce, ForceMode.Impulse);
     Destroy(newObj, 7);
   }
 }

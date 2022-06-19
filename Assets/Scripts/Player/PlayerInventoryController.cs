@@ -12,6 +12,7 @@ public class PlayerInventoryController : MonoBehaviour
 
   public GameObject throwableInitialPos;
   public GameObject bulletInitialPos;
+  public Camera shootCamera;
 
   private int _selectedWeaponIndex = -1;
 
@@ -112,7 +113,7 @@ public class PlayerInventoryController : MonoBehaviour
     Weapon wp = weapons[_selectedWeaponIndex];
     if (_selectedWeaponIndex == primaryIndex)
     {
-      wp.Shoot(bulletInitialPos.transform.position, transform.TransformDirection(Vector3.forward));
+      wp.Shoot(bulletInitialPos.transform.position, shootCamera.transform.TransformDirection(Vector3.forward));
       _update = true;
     }
   }
@@ -129,7 +130,7 @@ public class PlayerInventoryController : MonoBehaviour
       return;
     }
 
-    throwable.Throw(throwableInitialPos.transform.position, transform.TransformDirection(Vector3.forward));
+    throwable.Throw(throwableInitialPos.transform.position, shootCamera.transform.TransformDirection(Vector3.forward));
     _update = true;
   }
 }
