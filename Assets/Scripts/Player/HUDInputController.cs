@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using System;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(PlayerInventoryController), typeof(PlayerMojadoController))]
 public class HUDInputController : MonoBehaviour
@@ -21,9 +22,17 @@ public class HUDInputController : MonoBehaviour
   public GameObject throwablesLayout;
   public GameObject throwableImagePre;
 
+  [Header("GameState")]
+  public GameObject gameStateObj;
+
+  [Header("Seconds")]
+  public TextMeshProUGUI txtSegundos;
+
   private PlayerInventoryController _inventory;
   private PlayerMojadoController _mojado;
   private Image _img;
+
+  private GameState _gameState;
 
   void Start()
   {
@@ -35,6 +44,7 @@ public class HUDInputController : MonoBehaviour
     _inventory = GetComponent<PlayerInventoryController>();
     _mojado = GetComponent<PlayerMojadoController>();
     _img = weaponImage.GetComponent<Image>();
+    _gameState = gameStateObj.GetComponent<GameState>();
   }
 
   public void ShowInteractionText(bool show)
@@ -55,6 +65,33 @@ public class HUDInputController : MonoBehaviour
     }
     UpdateWeapons();
     UpdateThrowable();
+
+    UpdateGameState();
+  }
+
+  private void UpdateGameState()
+  {
+    txtSegundos.text = _gameState.GetSeconds().ToString("n3");
+
+    switch (_gameState.GetState())
+    {
+      case GameState.State.Win:
+        Win();
+        break;
+      case GameState.State.Lose:
+        Lose();
+        break;
+    }
+  }
+
+  private void Lose()
+  {
+    SceneManager.LoadScene("Perder", LoadSceneMode.Single);
+  }
+
+  private void Win()
+  {
+    SceneManager.LoadScene("Ganar", LoadSceneMode.Single);
   }
 
   private void UpdateHealth()

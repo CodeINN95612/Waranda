@@ -29,6 +29,12 @@ public class Agua : MonoBehaviour
     var duration = particles.main.duration;
     particles.Play();
 
+    Cop cop = other.gameObject.GetComponent<Cop>();
+    if (cop != null)
+    {
+      cop.Damage();
+    }
+
     Destroy(_collider);
     Destroy(_renderer);
     Destroy(_rb);

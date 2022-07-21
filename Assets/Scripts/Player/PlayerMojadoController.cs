@@ -8,10 +8,26 @@ public class PlayerMojadoController : MonoBehaviour, IDamageable
   public float maximoNivel = 100.0f;
 
   public bool WasDamaged = false;
+
+  public GameObject gameStateObj;
+
+  private GameState _gameState;
+
+  private void Start()
+  {
+    _gameState = gameStateObj.GetComponent<GameState>();
+  }
+
   public void Damage(float value)
   {
     Debug.Log("Golpeado");
     nivelActual = Mathf.Min(maximoNivel, nivelActual + value);
+
+    if (nivelActual >= maximoNivel)
+    {
+      _gameState.Lose();
+    }
+
     WasDamaged = true;
   }
 

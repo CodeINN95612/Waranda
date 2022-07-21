@@ -43,17 +43,20 @@
      <Compile Include="Assets\Scripts\Interactables\IInteractor.cs" />
      <Compile Include="Assets\Scripts\Ingredient\Ingredient.cs" />
      <Compile Include="Assets\Scripts\SceneController.cs" />
+     <Compile Include="Assets\Scripts\State\GameState.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerController.cs" />
      <Compile Include="Assets\Scripts\Items\Huevo.cs" />
      <Compile Include="Assets\Scripts\Items\Weapon.cs" />
      <Compile Include="Assets\Scripts\Items\Agua.cs" />
      <Compile Include="Assets\Scripts\Damage\Damageable.cs" />
+     <Compile Include="Assets\Scripts\Perder.cs" />
      <Compile Include="Assets\Scripts\Interactables\InteractableController.cs" />
      <Compile Include="Assets\Scripts\Other\WaterSpawn.cs" />
      <Compile Include="Assets\Scripts\Player\Cop.cs" />
      <Compile Include="Assets\Scripts\Items\Throwable.cs" />
      <Compile Include="Assets\Scripts\Player\HUDInputController.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerInventoryController.cs" />
+     <Compile Include="Assets\Scripts\CopSpawner.cs" />
      <Compile Include="Assets\Scripts\Items\HeatSource.cs" />
      <Compile Include="Assets\Scripts\LogicaSeguirCamara.cs" />
      <Compile Include="Assets\Scripts\Interactables\InteractableType.cs" />
@@ -341,6 +344,12 @@
     </Reference>
     <Reference Include="Newtonsoft.Json">
         <HintPath>C:\Users\USER\Documents\GitHub\Waranda\Library\PackageCache\com.unity.nuget.newtonsoft-json@3.0.2\Runtime\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Android.Types">
+        <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.2f1\Editor\Data\PlaybackEngines\AndroidPlayer\Unity.Android.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Android.Gradle">
+        <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.2f1\Editor\Data\PlaybackEngines\AndroidPlayer\Unity.Android.Gradle.dll</HintPath>
     </Reference>
     <Reference Include="netstandard">
         <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.2f1\Editor\Data\NetStandard\ref\2.1.0\netstandard.dll</HintPath>

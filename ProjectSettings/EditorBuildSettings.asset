@@ -17,4 +17,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Parque1.unity
     guid: 26a77b0aa70d386488043cd48969dd7a
+  - enabled: 1
+    path: Assets/Scenes/Perder.unity
+    guid: 0593729124d5d84498340d617b159203
+  - enabled: 1
+    path: Assets/Scenes/Ganar.unity
+    guid: c13983ec2487a294fa9c4f538f4c5102
   m_configObjects: {}

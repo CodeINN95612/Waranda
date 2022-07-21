@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,6 +15,7 @@ public class Cop : MonoBehaviour
   //float MidDist = 7;
 
   public GameObject huevo;
+  private float Health = 100f;
 
   // Use this for initialization
   void Start()
@@ -65,5 +67,19 @@ public class Cop : MonoBehaviour
 
     }
 
+  }
+
+  public void Damage()
+  {
+    Health -= 15f;
+    if (Health <= 0)
+    {
+      Die();
+    }
+  }
+
+  public void Die()
+  {
+    Destroy(this.gameObject);
   }
 }
